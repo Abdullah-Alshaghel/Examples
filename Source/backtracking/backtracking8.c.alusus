@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+#define N 8
+
+int board[N][N];
+
+// Possible moves for a knight
+int movesX[] = {2, 1, -1, -2, -2, -1, 1, 2};
+int movesY[] = {1, 2, 2, 1, -1, -2, -2, -1};
+
+// Function to check if a move is valid
+bool isSafe(int x, int y) {
+    return (x >= 0 && y >= 0 && x < N && y < N && board[x][y] == -1);
+}
+
+// Recursive function to solve the Knight's Tour problem
+bool solveKT(int x, int y, int move) {
+    if (move == N * N)
+        return true; // All squares have been visited
+
+    for (int i = 0; i < 8; i++) {
+        int nextX = x + movesX[i];
+        int nextY = y + movesY[i];
+
+        if (isSafe(nextX, nextY)) {
+            board[nextX][nextY] = move;
+            if (solveKT(nextX, nextY, move + 1))
+                return true;
+            board[nextX][nextY] = -1; // Backtrack
+        }
+    }
+
+    return false; // No solution exists
+}
+
+// Function to print the Knight's Tour
+void printSolution() {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%2d ", board[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    // Initialize the board with -1 to indicate unvisited squares
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            board[i][j] = -1;
+        }
+    }
+
+    int startX = 0, startY = 0; // Starting position of the knight
+    int move = 0; // Current move
+
+    board[startX][startY] = move;
+
+    if (solveKT(startX, startY, move + 1)) {
+        printf("Solution:\n");
+        printSolution();
+    } else {
+        printf("No solution exists.\n");
+    }
+
+    return 0;
+}

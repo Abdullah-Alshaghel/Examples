@@ -1,0 +1,23 @@
+import "Srl/Console";
+use Srl;
+
+
+func factorial(n: Int) Int[64]{
+   if n == 0 || n == 1{
+   return 1;
+   }else{
+   return n * factorial(n - 1);
+   }
+}
+
+def n: Int;
+Console.print("Enter a non-negative integer:")
+Fs.scan("%d", &n)
+
+if n < 0{
+Console.print("factorial is undefined for negative number.\n");
+}else{
+Console.print("%d! = %11u\n", n, factorial(n))
+}
+
+return 0;

@@ -1,0 +1,23 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+func power(x: Int, y: Int):Int{
+if y == 0{
+   return 1;
+}else if y % 2 == 0{
+def temp: Int = power(x, y / 2);
+return tepm * temp;
+}else{
+def temp: Int = power(x, y / 2);
+return x * temp * temp;
+}
+}
+
+def x: Int = 2;
+def y: Int = 10;
+
+def result: Int = power(x, y);
+
+Console.print("%lld^lld = %lld\n", x, y, result);
+return 0;

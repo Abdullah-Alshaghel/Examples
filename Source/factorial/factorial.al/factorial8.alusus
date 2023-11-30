@@ -1,0 +1,21 @@
+import "Srl/Console";
+use Srl;
+
+def n: Int;
+def sum: Int = 0;
+
+Console.print("Enter a positive integer:");
+Fs.scan("%d", &n);
+
+if n <= 0 {
+Console.print(" please Enter a positive integer.\n:");
+return 1;
+}
+def i: Int;
+for i = 1, i <= n, i++{
+  sum += i * i;
+}
+
+Console.print(" thw su of squarse from 1 to %d is d.\n:", n, sum);
+
+return 0;

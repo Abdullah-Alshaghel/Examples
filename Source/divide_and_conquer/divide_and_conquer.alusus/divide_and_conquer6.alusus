@@ -1,0 +1,24 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+
+func findMax(arr: Array[Int], low: Int, high: Int) :Int{
+if low == high 
+    :return arr(low);
+
+def mid: Int = (low + high) / 2;
+
+def leftMax: Int = findMax(arr, low, mid);
+def rightMax: Int = findMax(arr, mid + 1, high)
+
+return (leftMax > rightMax) ? leftMax : rightMax;
+}
+
+def arr: Array[Int] ({12, 34, 45, 9, 8, 23, 6});
+
+def n: Int = arr.getLength();
+
+Console.print("The maximum element in the array is: %d/n");
+
+return 0;

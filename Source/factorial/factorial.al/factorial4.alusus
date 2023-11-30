@@ -1,0 +1,23 @@
+import "Srl/Console";
+use Srl;
+
+def n: Int;
+def i: Int;
+
+def factorial: Int[64] = 1;
+
+Console.print("Enter an integer:");
+Fs.scan("%d", &n);
+
+if n < 0{
+   Console.print("Enter: factorial is not defined for negative number.\n");
+   
+}else{
+def i: Int;
+   for i = 1, i <= n, ++i{
+       factorial *= i;
+   }
+    Console.print("factorial of %d = %11u\n", n, factorial);
+}
+
+return 0;

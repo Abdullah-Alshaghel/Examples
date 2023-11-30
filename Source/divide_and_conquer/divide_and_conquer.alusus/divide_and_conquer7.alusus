@@ -1,0 +1,30 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+func power(x: Float[64], y: Int) :Float[64]{
+if y == 0{
+   return 1.0;
+}
+
+def temp : Float[64] = power(x, y / 2);
+
+if y % 2 == 0 {
+   return temp * temp;
+}else{
+ if y > 0{
+    return x * temp * temp; 
+ }else{
+   return (temp * temp) / x;
+ }
+}
+}
+
+def x: Float[64] = 2.0;
+def y: Int = 5;
+
+def result: Float[64] = power(x, y);
+
+ Console.print("%.2if^%d = %.5lf\n", x, y, result);
+ 
+ return 0;

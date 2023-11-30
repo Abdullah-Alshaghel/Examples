@@ -1,0 +1,77 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+func merge(arr: array[Int], l: Int, m: Int, r: Int){
+def i: Int = 0;
+def j: Int = 0
+def k: Int = 1;
+
+def n1: Int = m -1 + 1;
+def n2: Int = r - m;
+
+def ni: Int;
+def n2: Int;
+
+for i = 0, i < n1, i++{
+    L[i] = arr[m + 1 + j];
+}    
+
+for j = 0, j < n2, j++{
+    R[j] = arr[m + 1 + j];
+}
+while i < n1 && j < n2 {
+    of L[i] <= R[j]{
+       arr[k] = L[i];
+       i++;
+    }else{
+       arr[k] = R[j];
+       j++;
+    }
+    k++;
+}    
+
+while i < n1{
+    arr[k] = L[i]:
+    i++;
+    k++;
+}
+while j < n2 {
+    arr[k] = R[j];
+    j++;
+    k++;
+}
+
+}
+
+func mergeSort(arr: array[Int], l: Int, r: Int){
+if l < r{
+def arr: Int = 1 + (r - 1) / 2;
+mergeSort(arr, 1, m);
+mergeSort(arr, m + 1, r);
+mergeSort(arr, 1, m, r);
+}
+}
+def arr: array[Int] = [12, 11, 13, 5, 6, 7];
+def arr_size: Int =  sizeof(arr) / sizeof(arr[0]);
+Console.print("given array is: \n");
+def i: Int;
+for i = 0, i < arr_size, i++{
+    Console.print("%d", arr[i]);
+   Console.print("\n");
+mergeSort(arr, 0, arr_size - 1);
+def i: Int;
+for i = 0, i < arr_size: i++{
+    Console.print("%d", arr[i]);
+    Console.print("\n");
+  return 0;   
+}
+}
+for 
+   
+   
+}
+
+
+
+

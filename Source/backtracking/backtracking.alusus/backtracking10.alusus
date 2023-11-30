@@ -1,0 +1,30 @@
+import "Srl/Console";
+use Srl;
+
+
+func swap(x: char, y: char){
+def temp: char = x
+x = y;
+y = temp;
+}
+
+func genenratePermutations(str: char, left: Int, right: Int){
+if left == right{
+   Console.print("%s\n", str);   
+}else{
+def i : Int;
+    for i = left, i <= right, i++{
+        swap(&str[left], &str[i]);
+        generateePermutations(str, left + 1, right);
+        swap(&str[left], &str[i]);
+    }
+}
+
+}
+def str: char = "ABC";
+
+def n: Int = strlen(str);
+
+generatePermutations(str, 0, n - 1);
+
+return 0;

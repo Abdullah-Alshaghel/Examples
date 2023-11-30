@@ -1,0 +1,30 @@
+import "Srl/Console";
+use Srl;
+
+func isProme(num: Int) Int;{
+if num <= 1{
+   return false;
+}
+
+def i: Int;
+for i = 2, i * i <= num, i++{
+    if num % i == 0{
+       return false;
+    }
+}
+
+return true;
+}
+
+def number: Int;
+
+Console.print("Enter an integer:");
+Fs.scan("%d", &number);
+
+if isPrime(number){
+Console.print("%d is a prime number.\n", number);
+}else {
+Console.print("%d is not a prime number.\n", number);
+}
+
+return 0;

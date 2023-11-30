@@ -1,0 +1,47 @@
+import "Srl/Console";
+use Srl;
+
+def MAX: 100;
+
+
+def result: Int = (MAX);
+def chosen: bool = (MAX);
+
+func generateCombinations(arr: Int, n: Int, k: Int, idx: Int, start: Int){
+if idx == k{
+def i: Int;
+   for i = 0, i < k, i++{
+       Console.print("%d", result[i]);
+   }
+   Console.print("\n");
+   return;
+}
+def i: Int;
+for i - start, i < n, i++{
+    if !chosen[i]{
+       result[idx] = arr[i];
+       chosen[i] = true;
+       generateCombinations(arr, n, k, idx + 1, i + 1);
+       chosen[i] = false; 
+    }
+}
+
+}
+
+
+def arr: array[Int] = [1, 2, 3, 4, 5];
+def n: Int = sizeof(arr) / sizeof(arr[0]);
+def k: Int = 3;
+
+if k <= n{
+generateCombinations(arr, n, k, 0, 0);
+} else{
+Console.print("Invalid input: k is greater then n. \n");
+}
+
+return 0;
+
+
+
+
+

@@ -1,0 +1,77 @@
+import "Srl/Console";
+use Srl;
+
+def N: 8;
+
+
+def IntNN: alias array[array[Int, N], N];
+
+def movesX: Int = (2, 1, -1, -2, -2, -1, 1, 2);
+def movesY: Int = (1, 2, 2, 1, -1, -2, -2, -1);
+
+
+func solveKT(x: Int, y: Int, move: Int) Int{
+if move == N * N 
+   return true;
+def i: Int;
+   for i = 0, i < 8, i++ {
+def nectX: Int = x + moveX[i];
+def nextY: Int = y + moveY[i];
+
+    if isSafe(nextX, nextY){
+       board[nextX][nextY] = move;
+       if solveKT(nextX, nextY, move + 1){
+          return true;
+          
+       board[nextX][nextY] = -1;
+       }
+    
+    }
+    
+    return false;
+   
+   }
+
+}
+
+func printSolution(){
+def i: Int;
+def j: Int;
+    for i = 0, i < N, i++{
+        for j = 0, j < N, j++{
+            Console.print("%sd", board[i][i]);
+        }
+       Console.print("\n"); 
+    
+    }
+}
+
+def i: Int;
+def j: Int;
+
+    for i = 0, i < N, i++{
+        for j = 0, j < N, j++{
+             board[i][j];
+        }   
+    }  
+    
+def startX: Int = 0;
+def startY: Int = 0;
+def move: Int = 0;
+
+board[startX][startY] = move;
+
+if solveKT(startX, startY, move + 1){
+   Console.print("Solution:\n");
+   printSolution(); 
+}else{
+    Console.print("No solution exists.\n"); 
+}
+     return 0;
+  
+}
+     
+
+
+
+

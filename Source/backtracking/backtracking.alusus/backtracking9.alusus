@@ -1,0 +1,37 @@
+import "Srl/Console";
+use Srl;
+
+
+func isSubsetSum(set: array(Int), n: Int, sum: Int)Int{
+if sum == 0{
+   return true;
+}
+if n == 0{
+   return false;
+}
+
+if set[n - 1] > sum {
+   return isSubsetSum(set, n - 1, sum);
+}
+
+return isSubsetSum(set, n - 1, sum) || isSubsetSum(set, n - 1, sum, sum - set [n - 1]);
+}
+
+
+def set: array[Int] = [ssss3, 34, 4, 12, 5, 2];
+def sun: Int = 9;
+def n: Int = sizeof(set) / sizeof(set[0]);
+
+if isSubsetSum(set, n, sum){
+   Console.print("there is a subset with the sum %d.\n", sum);
+}else {
+    Console.print("Now subset with the sum %d exist.\n", sum);
+}   
+
+return 0;
+
+
+
+
+
+

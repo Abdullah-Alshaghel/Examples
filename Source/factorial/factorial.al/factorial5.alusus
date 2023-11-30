@@ -1,0 +1,23 @@
+import "Srl/Console";
+use Srl;
+
+func factorial(n: Int) Int[64]{
+def result: Int[64] = 1;
+def n: Int;
+for i = 1, i < n, i++{
+    result *= i;
+} 
+
+return result;
+}
+
+def num: Int;
+Console.print("Enter a number:");
+Fs.scan("%d", &num);
+
+if num < 0{
+   Console.print("faxtorial is not defined for negative number.\n");
+}else{
+def result: Int[64] = factorial(num);
+Console.print("factorial of %d is %11u\n", num, result);
+}

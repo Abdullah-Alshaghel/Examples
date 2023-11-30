@@ -1,0 +1,24 @@
+import "Srl/Console";
+use Srl;
+
+func factorial(n : Int) Int[64]{
+if n < 0{
+return ;
+}
+
+def result: Int[64] = 1;
+def i: Int;
+for i = 1, i <= n, i++{
+    result *= i;
+}
+
+return result;
+}
+
+def n : Int;
+Console.print("Enter a non-negative integer:");
+Fs.scan("%d", &n);
+
+Console.print("%d! = %11u\n", n, factorial(n));
+
+return 0;
