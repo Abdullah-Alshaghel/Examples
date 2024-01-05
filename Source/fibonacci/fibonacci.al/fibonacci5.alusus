@@ -1,0 +1,29 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+func fib_memoization(n: Int, memo: Int):Int{
+if n <= 1{
+return n;
+}
+if memo[n] != -1{
+   return memo[n];
+   memo[n] = fib_memoization(n - 1, memo) + fib_memoization(n -2, memo);
+   return memo[n];
+}
+
+func fibonacci_memo(n: Int)Int:{
+def memo: Int = [n + 1];
+def i: Int;
+for i = 0, i <= n, i++{
+memo[i] = -1;
+return fib_memoization(n, memo);
+}
+}
+
+}
+
+def n: Int = 9;
+
+Console.print("Fibonacci(%d) using memoization: %d\n", n, fibonacci_memo(n));
+return 0; 

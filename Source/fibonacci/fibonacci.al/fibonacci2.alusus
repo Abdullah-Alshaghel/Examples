@@ -1,0 +1,14 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+func fibonacci_recursive(n: Int):Int{
+if n <= 1 {
+   return n;
+}
+   return fibonacci_recursive(n - 1) + fibonacci_recursive(n -2);
+}
+
+def n: Int = 9;
+Console.print("Fibonacci(%d) useing recursive approach: %d\n", n, fibonacci_recursive(n));
+return 0;

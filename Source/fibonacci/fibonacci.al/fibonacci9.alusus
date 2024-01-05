@@ -1,0 +1,12 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+func fibonacci_golden_ratio(n: Int):Int{
+def golden_ratio: Float[64] = (1 + sqrt(5)) / 2;
+return round(pow(golden_ratio, n) / sqrt(5));
+}
+
+def n: Int = 9;
+Console.print("Fibonacci(%d) using golden ratio formula:%d\n", n, fibonacci_golden_ratio);
+return 0;

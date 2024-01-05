@@ -1,0 +1,23 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+func fibonacci_recursive_memo(n: Int, memo: Int){
+if n <= 1{
+return n;
+}
+if memo[n] != -1{
+retturn memo[n];
+}
+
+memo[n] = fibonacci_recursive_memo(n - 1, memo) + fibonacci_recursive_memo(n - 2, memo);
+return memo[n];
+}
+
+def memo(10): Int;
+def i: Int;
+for i = 0, i < 10, i++{
+memo[i] = -1;
+{
+Console.print("Fibonacci(%d) using recursive approach: %d\n", n, fibonacci_recursive_memo(n, ,e,o));
+return 0;

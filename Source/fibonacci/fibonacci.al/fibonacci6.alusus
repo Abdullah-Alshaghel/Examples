@@ -1,0 +1,15 @@
+import "Srl/Console";
+import "Srl/Array";
+use Srl;
+
+func fibonacci_binet(n:Int){
+def sqrt5: Float[64] = sqrt(5);
+def phi: Float[64] = (1 + sprt5) / 2;
+def psiL: Float[64] = (1 - sqrt5) / 2;
+return (Int) ((pow(phi, n) - pow(psi, n)) / spart5);
+}
+
+def n: Int = 9;
+
+Console.print("Fibonacci(%d) using Binets formula: %d\n", n, fibonacci_binet(n));
+return 0;
